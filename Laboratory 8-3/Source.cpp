@@ -7,18 +7,23 @@ int romanCharValue(char r);
 int convertRomanToInt(const string& s);
 
 int main() {
-    cout << "Testing romanCharValue function:\n";
-    cout << "I = " << romanCharValue('I') << endl; 
-    cout << "V = " << romanCharValue('V') << endl; 
-    cout << "X = " << romanCharValue('X') << endl; 
-    cout << "L = " << romanCharValue('L') << endl; 
-    cout << "C = " << romanCharValue('C') << endl; 
-    cout << "D = " << romanCharValue('D') << endl; 
-    cout << "M = " << romanCharValue('M') << endl; 
-    ;
-    cout << "MCMLXII = " << convertRomanToInt("MCMLXII") << endl; 
-    cout << "MDCCCLXXXVIII = " << convertRomanToInt("MDCCCLXXXVIII") << endl; 
+    string input;
 
+    cout << "Enter Roman number or Q to quit: ";
+    while (getline(cin, input)) {
+        if (input == "Q" || input == "q") {
+            break;
+        }
+
+        if (!input.empty()) {
+            int value = convertRomanToInt(input);
+            cout << input << " = " << value << endl;
+        }
+
+        cout << "Enter Roman number or Q to quit: ";
+    }
+
+    return 0;
     return 0;
 }
 
